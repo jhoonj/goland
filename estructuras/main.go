@@ -3,21 +3,18 @@ package main
 import (
 	"fmt"
 	"time"
+
+	us "./user"
 )
 
-type usuario struct {
-	Id        int
-	Nombre    string
-	FechaAlta time.Time
-	Status    bool
+type pepe struct {
+	us.Usuario
 }
 
 func main() {
-	user := new(usuario)
+	u := new(pepe)
 
-	user.Id = 10
-	user.Nombre = "jhon escobar"
-
-	fmt.Println(user)
+	u.AltaUsuario(1, "jhon escobar", time.Now(), true)
+	fmt.Println(u.Usuario)
 
 }
